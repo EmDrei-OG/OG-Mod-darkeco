@@ -2469,14 +2469,14 @@
             default-level))
 
 ;;;;;;;;; CUSTOM LEVELS
-(define test-zone
+(define sb-eco
   (new 'static
        'level-load-info
-       :index 26
-       :name 'test-zone
-       :visname 'test-zone-vis
+       :index 24
+       :name 'sb-eco
+       :visname 'sb-eco-vis
        ;; name + -vis
-       :nickname 'tsz
+       :nickname 'mfl
        ;; nickname
        :packages
        '()
@@ -2492,10 +2492,10 @@
        :continues
        '((new 'static
              'continue-point
-             :name "test-zone-start"
-             :level 'test-zone
+             :name "sb-eco-start"
+             :level 'sb-eco
              :trans
-             (new 'static 'vector :x 0.0 :y (meters 10.) :z (meters 10.) :w 1.0)
+             (new 'static 'vector :x (meters -150.0) :y (meters 12.0) :z (meters -110.0) :w 1.0)
              :quat
              (new 'static 'quaternion :w 1.0)
              :camera-trans
@@ -2505,9 +2505,9 @@
              :load-commands
              '()
              :vis-nick 'none
-             :lev0 'test-zone
+             :lev0 'sb-eco
              :disp0 'display
-             :lev1 'village1
+             :lev1 'beach
              :disp1 'display))
        :tasks
        '()
@@ -2523,5 +2523,6 @@
        :run-packages
        '()
        :wait-for-load #t))
+     
+(cons! *level-load-list* 'sb-eco)
 
-(cons! *level-load-list* 'test-zone)
