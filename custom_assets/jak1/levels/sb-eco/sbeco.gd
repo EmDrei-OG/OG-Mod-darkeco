@@ -4,10 +4,12 @@
 ;; the actual file name still needs to be 8.3
 ("SBE.DGO"
  ("static-screen.o"
+  "plat-ag.go"
   "water-anim-jungle-ag.go"
   "water-anim-training-ag.go"
   "water-anim-sunken-ag.go"
   "sunken-water.o"
+  "misty-part.o"
   "jungle-obs.o"
   "sb-eco.go"
 ))

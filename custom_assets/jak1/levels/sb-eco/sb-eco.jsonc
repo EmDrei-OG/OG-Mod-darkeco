@@ -62,7 +62,9 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": [
     "plat-ag", 
-    "water-anim-jungle-ag" 
+    "water-anim-sunken-ag",
+    "water-anim-jungle-ag",
+    "misty-part.o"
   ],
 
   // If you have any custom models in the "custom_assets/jak1/models/custom_levels" folder that you want to use in your level, add them to this list.
@@ -170,7 +172,7 @@
       }
     }, */
 
-    {
+/*     {
       "aid": 50000,
       "trans": [ -99.10, 167.58, 34.45 ], // translation needs to also sit on top of water volume plane
       "etype": "water-anim", // actor type
@@ -193,6 +195,63 @@
         "vis-dist": [ "meters", 200.0 ]
         //"scale": [ "float", 5.0 ]
       }
+    }, */
+
+    {
+      "aid": 48888,
+      "trans": [ -99.10, 167.58, 34.45 ], // translation needs to also sit on top of water volume plane
+      "etype": "water-anim", // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat": [ 0, 0, 0, 1 ], // quaternion
+      "bsphere": [ -99.10, 167.58, 34.45, 200.0 ], // bounding sphere
+      "lump": {
+        "vol": [
+          "vector",
+          [ 1.0, 0.0, 0.0, 1.0 ], // +x (+x in blender)
+          [ -1.0, 0.0, 0.0, 1.0 ], // -x (inverted x in blender because of the -1)
+          [ 0.0, 1.0, 0.0, 1.0 ], // +y (+z in blender)
+          [ 0.0, -1.0, 0.0, 1.0 ], // -y (inverted z in blender because of the -1)
+          [ 0.0, 0.0, 1.0, 1.0 ], // +z (-y in blender)
+          [ 0.0, 0.0, -1.0, 1.0 ] // -z (+y in blender)
+        ],
+        "name": "afon-water",
+        "water-height": [ "float", 1466873.6, 2048.0, 8192.0, 1048588.0 ], // camera height (top of water volume plane + 4192), ?, wadledept, flags "water-height": ["water-height", 0.0, 0.5, 2.0, "(water-flags wt08 wt03 wt01)"],
+        "look": [ "int32", 8 ],
+        "vis-dist": [ "meters", 200.0 ],
+        "scale": [ "float", 5.0 ]
+      }
+    },
+
+    {
+      "trans": [ -109.0, 8.2, -192.0 ], // translation -1196.41 354.36 178.98
+      "etype": "sbeco-part", // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat": [ -2, -1.825, -2, 0.905 ], // quaternion
+      "bsphere": [ -109.0, 8.2, -192.0, 50 ], // bounding sphere
+      "lump": {
+        "name": "sbwaterfall1",
+        "effect-name": "'waterfall",
+        "art-name": "group-afon-waterfall3",
+        "effect-param": [ "float", 11.0, 40.0, 12.0, 80.0 ], // ??, ??, ??, ??
+        "cycle-speed": [ "float", -1.0, 0.0 ],
+        "vis-dist": [ "meters", 200.0 ]
+      }
     }
+    
+/*     {
+      "trans": [ -109.0, 8.2, -192.0 ], // translation
+      "etype": "misty-part", // actor type
+      "game_task": "(game-task none)", // associated game task (for powercells, etc)
+      "quat": [ 0, 0, 0, 1 ], // quaternion
+      "bsphere": [ -243.95, 100.45, 358.92, 10 ], // bounding sphere
+      "lump": {
+        "name": "sbfog1",
+        "art-name": "group-misty-fog",
+        "effect-name": "'fog",
+        "effect-param": [ "float", 11.0, 40.0, 12.0, 80.0 ], // ??, ??, ??, ??
+        "cycle-speed": [ "float", -1.0, 0.0 ],
+        "vis-dist": [ "meters", 200.0 ]
+      }
+    } */
   ]
 }
