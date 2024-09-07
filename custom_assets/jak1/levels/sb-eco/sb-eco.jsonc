@@ -60,7 +60,10 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  // "art_groups": ["plat-ag"],
+  "art_groups": [
+    "plat-ag", 
+    "water-anim-jungle-ag" 
+  ],
 
   // If you have any custom models in the "custom_assets/jak1/models/custom_levels" folder that you want to use in your level, add them to this list.
   // Note: Like with art groups, these should also be added to your level's .gd file.
@@ -142,7 +145,7 @@
       "lump": {
         "name": "test-actor"
       }
-    }
+    },
     // {
     //   "trans": [-7.41, 3.5, 28.42], // translation
     //   "etype": "plat",  // actor type
@@ -153,5 +156,43 @@
     //     "name": "test-plat"
     //   }
     // }
+ /*    {
+      //"aid": 48888,
+      "trans": [ -99.10, 167.58, 34.45 ], // translation needs to also sit on top of water volume plane
+      "etype": "jungle-water", // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat": [ 0, -0.54, 0, 0.84 ], // quaternion
+      "bsphere": [ -99.10, 167.58, 34.45, 10 ], // bounding sphere
+      "lump": {
+       "name": "WaterShape-34",
+       "look":  ["int32", 34],
+       "scale": [ "float", 1.0 ]
+      }
+    }, */
+
+    {
+      "aid": 50000,
+      "trans": [ -99.10, 167.58, 34.45 ], // translation needs to also sit on top of water volume plane
+      "etype": "water-anim", // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat": [ 0, 0, 0, 1 ], // quaternion
+      "bsphere": [ -99.10, 167.58, 34.45, 0.0 ], // bounding sphere
+      "lump": {
+        "vol": [
+          "vector",
+          [ 1.0, 0.0, 0.0, 3463.92 ], // +x (+x in blender)
+          [ -1.0, 0.0, 0.0, -633118.72 ], // -x (inverted x in blender because of the -1)
+          [ 0.0, 1.0, 0.0, 0.0 ], // +y (+z in blender)
+          [ 0.0, -1.0, 0.0, 34267.1616 ], // -y (inverted z in blender because of the -1)
+          [ 0.0, 0.0, 1.0, 3871784.96 ], // +z (-y in blender)
+          [ 0.0, 0.0, -1.0, 1035509.76 ] // -z (+y in blender)
+        ],
+        "name": "sb-vol1",
+        "water-height": [ "float", 4096.0, 2048.0, 8192.0, 1048588.0 ], // camera height (top of water volume plane + 4192), ?, wadledept, flags "water-height": ["water-height", 0.0, 0.5, 2.0, "(water-flags wt08 wt03 wt01)"],
+        "look": [ "int32", 36 ],
+        "vis-dist": [ "meters", 200.0 ]
+        //"scale": [ "float", 5.0 ]
+      }
+    }
   ]
 }

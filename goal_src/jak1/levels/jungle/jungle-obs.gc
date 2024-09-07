@@ -879,7 +879,7 @@
 (define ripple-for-jungle-water
   (new 'static
        'ripple-wave-set
-       :count 3
+       :count 4
        :converted #f
        :normal-scale 1.5
        :wave
@@ -887,16 +887,16 @@
             'inline-array
             ripple-wave
             4
-            (new 'static 'ripple-wave :scale 30.0 :xdiv -2 :speed 4.0)
-            (new 'static 'ripple-wave :scale 30.0 :xdiv 1 :zdiv -1 :speed 4.0)
-            (new 'static 'ripple-wave :scale 10.0 :xdiv -5 :zdiv -3 :speed 2.0)
+            (new 'static 'ripple-wave :scale 30.0 :xdiv -2 :speed 1.0)
+            (new 'static 'ripple-wave :scale 30.0 :xdiv 2 :zdiv -1 :speed 1.0)
+            (new 'static 'ripple-wave :scale 10.0 :xdiv -5 :zdiv -3 :speed 1.0)
             (new 'static 'ripple-wave))))
 
 (defmethod water-vol-method-22 ((this jungle-water))
   (let ((t9-0 (method-of-type water-anim water-vol-method-22))) (t9-0 this))
   (let ((v1-2 (new 'process 'ripple-control)))
     (set! (-> this draw ripple) v1-2)
-    (set-vector! (-> this draw color-mult) 0.01 0.45 0.5 0.75)
+    (set-vector! (-> this draw color-mult) 0.20 0.0 0.20 10.0)
     (set! (-> v1-2 global-scale) 3072.0)
     (set! (-> v1-2 close-fade-dist) 163840.0)
     (set! (-> v1-2 far-fade-dist) 245760.0)

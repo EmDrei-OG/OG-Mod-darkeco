@@ -2476,7 +2476,7 @@
        :name 'sb-eco
        :visname 'sb-eco-vis
        ;; name + -vis
-       :nickname 'mfl
+       :nickname 'sbe
        ;; nickname
        :packages
        '()
@@ -2495,7 +2495,7 @@
              :name "sb-eco-start"
              :level 'sb-eco
              :trans
-             (new 'static 'vector :x (meters -150.0) :y (meters 12.0) :z (meters -110.0) :w 1.0)
+             (new 'static 'vector :x (meters -150.0) :y (meters 22.0) :z (meters -110.0) :w 1.0)
              :quat
              (new 'static 'quaternion :w 1.0)
              :camera-trans
