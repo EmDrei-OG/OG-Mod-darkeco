@@ -197,7 +197,7 @@
       }
     }, */
 
-    {
+/*     {
       "aid": 48888,
       "trans": [ -99.10, 167.58, 34.45 ], // translation needs to also sit on top of water volume plane
       "etype": "water-anim", // actor type
@@ -207,18 +207,41 @@
       "lump": {
         "vol": [
           "vector",
-          [ 1.0, 0.0, 0.0, 1.0 ], // +x (+x in blender)
-          [ -1.0, 0.0, 0.0, 1.0 ], // -x (inverted x in blender because of the -1)
-          [ 0.0, 1.0, 0.0, 1.0 ], // +y (+z in blender)
-          [ 0.0, -1.0, 0.0, 1.0 ], // -y (inverted z in blender because of the -1)
-          [ 0.0, 0.0, 1.0, 1.0 ], // +z (-y in blender)
-          [ 0.0, 0.0, -1.0, 1.0 ] // -z (+y in blender)
+          [ 1.0, 0.0, 0.0, -90.0 ], // +x (+x in blender)
+          [ -1.0, 0.0, 0.0, 90.0 ], // -x (inverted x in blender because of the -1)
+          [ 0.0, 1.0, 0.0, 8.0 ], // +y (+z in blender)
+          [ 0.0, -1.0, 0.0, -8.0 ], // -y (inverted z in blender because of the -1)
+          [ 0.0, 0.0, 1.0, -192.0 ], // +z (-y in blender)
+          [ 0.0, 0.0, -1.0, 192.0 ] // -z (+y in blender)
         ],
         "name": "afon-water",
-        "water-height": [ "float", 1466873.6, 2048.0, 8192.0, 1048588.0 ], // camera height (top of water volume plane + 4192), ?, wadledept, flags "water-height": ["water-height", 0.0, 0.5, 2.0, "(water-flags wt08 wt03 wt01)"],
+        "water-height": [ "float", 4102.0, 4200.0, 8192.0, 1048588.0 ], // camera height (top of water volume plane + 4192), ?, wadledept, flags "water-height": ["water-height", 0.0, 0.5, 2.0, "(water-flags wt08 wt03 wt01)"],
         "look": [ "int32", 8 ],
         "vis-dist": [ "meters", 200.0 ],
         "scale": [ "float", 5.0 ]
+      }
+    }, */
+
+    {
+      "trans": [ -99.10, 167.58, 34.45 ], // translation
+      "etype": "water-anim", // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat": [ 0, 0, 0, 1 ], // quaternion
+      "bsphere": [ -99.10, 167.58, 34.45, 200.0 ], // bounding sphere
+      "lump": {
+        "vol": [
+          "vector",
+          [ 1.0, 0.0, 0.0, 3469393.92 ], // +x (+x in blender)
+          [ -1.0, 0.0, 0.0, -633118.72 ], // -x (inverted x in blender because of the -1)
+          [ 0.0, 1.0, 0.0, 0.0000 ], // +y (+z in blender)
+          [ 0.0, -1.0, 0.0, 34267.1616 ], // -y (inverted z in blender because of the -1)
+          [ 0.0, 0.0, 1.0, 3871784.96 ], // +z (-y in blender)
+          [ 0.0, 0.0, -1.0, 1035509.76 ] // -z (+y in blender)
+        ],
+        "name": "sbnewwater",
+        "water-height": [ "float", 0.0, 2048.0, 8192.0, 1048588.0 ], // camera height, ?, wadledept, flags
+        "look": [ "int32", 8 ],
+        "vis-dist": [ "meters", 200.0 ]
       }
     },
 
@@ -237,6 +260,7 @@
         "vis-dist": [ "meters", 200.0 ]
       }
     }
+    
     
 /*     {
       "trans": [ -109.0, 8.2, -192.0 ], // translation
